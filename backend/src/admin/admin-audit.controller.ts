@@ -13,7 +13,7 @@ import { PrismaService } from '../prisma/prisma.service';
 /**
  * Audit log endpoints.
  *
- * GET /api/admin/audit-log — queryable "who did what" trail.
+ * GET /api/admin/platform-audit-log — queryable "who did what" trail.
  */
 @ApiTags('admin-audit')
 @UseGuards(JwtAuthGuard)
@@ -25,12 +25,12 @@ export class AdminAuditController {
   ) {}
 
   /**
-   * GET /api/admin/audit-log — the queryable "who did what" trail. Filters:
+   * GET /api/admin/platform-audit-log — the queryable "who did what" trail. Filters:
    * ?actor=ADMIN|USER|SYSTEM, ?action= (prefix match, e.g. 'integration.'),
    * ?actorUserId=, ?from=/?to= (ISO on createdAt), ?page=/?pageSize=
    * (default 50, max 200). Newest first.
    */
-  @Get('audit-log')
+  @Get('platform-audit-log')
   async auditLog(
     @Query('actor') actor?: string,
     @Query('action') action?: string,

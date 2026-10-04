@@ -23,6 +23,6 @@ FEATURE_ROUTES.push(
   { path: 'orders', loadComponent: () => import('./order-management/order-management.component').then(m => m.OrderManagementComponent) },
   { path: 'invoices', loadComponent: () => import('./invoices/invoices.component').then(m => m.InvoicesComponent) },
   { path: 'settings/notifications', loadComponent: () => import('./settings-notifications/settings-notifications.component').then(m => m.SettingsNotificationsComponent) },
-  { path: 'admin/audit-log', loadComponent: () => import('./admin-audit-log/admin-audit-log.component').then(m => m.AdminAuditLogComponent) },
+  { path: 'admin/audit-log', loadComponent: () => import('./audit-log/audit-log.component').then(m => m.AuditLogComponent) },
 );
 // <<codegen:feature-routes:end>>

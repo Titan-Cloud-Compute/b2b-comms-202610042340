@@ -356,7 +356,7 @@
         "name": "Audit Log",
         "nav": true,
         "page_id": "admin-audit-log",
-        "source": "web/src/app/features/admin-audit-log/admin-audit-log.component.ts",
+        "source": "web/src/app/features/audit-log/audit-log.component.ts",
         "story": "audit-log",
         "url": "/admin/audit-log"
       },

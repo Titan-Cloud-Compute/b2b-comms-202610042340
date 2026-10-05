@@ -4,7 +4,7 @@ import { RouterModule, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { SafeHtmlPipe } from '../safe-html.pipe';
 import { AuthApi } from '../api/auth-api.service';
-import { FIRM_NAV_ITEMS, ADMIN_NAV_ITEMS, SHARED_NAV_ITEMS, ADMIN_TAB_MAP } from './nav-items';
+import { FIRM_NAV_ITEMS, ADMIN_NAV_ITEMS, SHARED_NAV_ITEMS, ADMIN_TAB_MAP, FEATURE_NAV_ITEMS, NAV_GROUPS, NavGroup } from './nav-items';
 import { SIDEBAR_TEMPLATE } from './sidebar.template';
 
 @Component({
@@ -382,6 +382,10 @@ export class SidebarComponent {
   openSettings = output<void>();
 
   readonly firmNavItems = FIRM_NAV_ITEMS;
+  readonly navGroups = NAV_GROUPS;
+  featureNavItemsFor(group: NavGroup) {
+    return FEATURE_NAV_ITEMS.filter(item => item.group === group);
+  }
   readonly adminNavItems = ADMIN_NAV_ITEMS;
   // Rendered for every role (see SHARED_NAV_ITEMS) — outside the role branches.
   readonly sharedNavItems = SHARED_NAV_ITEMS;

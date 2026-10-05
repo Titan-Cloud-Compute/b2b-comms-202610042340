@@ -45,7 +45,7 @@ function registerOrderMocks(api: MockApiClient): void {
   standalone: true,
   imports: [FormsModule],
   template: `
-    <div data-testid="orders-screen">
+    <div class="page" data-testid="orders-screen">
       <h1>Orders</h1>
 
       <section aria-labelledby="po-heading">

@@ -1,0 +1,175 @@
+/* Shared page primitives — every value comes from styles/tokens.css (no raw literals).
+ * Feature pages opt in with a root `.page` container; the shared LayoutComponent
+ * provides the sidebar + top bar around them. */
+.page {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--font-size-md);
+  color: var(--color-text-primary);
+}
+
+.page h1 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.page h2,
+.page h3 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.page p {
+  color: var(--color-text-secondary);
+}
+
+.page > section,
+.page .card {
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-5);
+  overflow-x: auto;
+}
+
+.page ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.page form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-3);
+  margin: var(--space-2) 0;
+}
+
+.page label {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+.page input,
+.page select,
+.page textarea {
+  min-height: var(--control-height);
+  padding: var(--space-2) var(--space-3);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--font-size-input);
+}
+
+.page input[type="checkbox"],
+.page input[type="radio"] {
+  min-height: 0;
+  padding: 0;
+  accent-color: var(--color-primary);
+}
+
+.page input:focus,
+.page select:focus,
+.page textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-focus);
+}
+
+.page button {
+  min-height: var(--control-height);
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-width) solid var(--color-primary);
+  border-radius: var(--radius-btn);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+}
+
+.page button:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.page button[type="button"] {
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+
+.page button[type="button"]:hover:not(:disabled) {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.page button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.page table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.page th,
+.page td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: var(--border-width) solid var(--color-border-light);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.page th {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-semibold);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: var(--space-4);
+  }
+
+  .page form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .page form > *,
+  .page input,
+  .page select,
+  .page textarea,
+  .page button {
+    width: 100%;
+  }
+
+  .page input[type="checkbox"],
+  .page input[type="radio"] {
+    width: auto;
+  }
+}

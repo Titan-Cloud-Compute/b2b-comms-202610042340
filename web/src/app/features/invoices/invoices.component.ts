@@ -42,7 +42,7 @@ function registerInvoiceMocks(api: ApiClient): void {
   standalone: true,
   imports: [FormsModule],
   template: `
-    <div data-testid="invoices-screen">
+    <div class="page" data-testid="invoices-screen">
       <h1>Invoices</h1>
 
       <section>

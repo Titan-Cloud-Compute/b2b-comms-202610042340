@@ -40,7 +40,7 @@ function registerMessageMock(mock: MockApiClient, channelId: string): void {
   standalone: true,
   imports: [FormsModule],
   template: `
-    <div data-testid="channels-screen">
+    <div class="page" data-testid="channels-screen">
       <h1>Channels</h1>
       <p data-testid="channels-vendor-outcome">
         When a vendor creates a shared channel, the channel is stored and displays in both the vendor and customer channel lists.

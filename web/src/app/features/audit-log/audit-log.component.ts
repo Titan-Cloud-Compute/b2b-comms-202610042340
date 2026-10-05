@@ -16,7 +16,7 @@ export interface AuditEntry {
   standalone: true,
   imports: [FormsModule, DatePipe],
   template: `
-    <div data-testid="admin-audit-log-screen">
+    <div class="page" data-testid="admin-audit-log-screen">
       <h1>Audit Log</h1>
       <p data-testid="audit-log-view-outcome">a list of AuditEntry records is displayed in chronological order returns 200</p>
       <p data-testid="audit-log-record-outcome">the AuditEntry is stored and returns 201 with the created record</p>

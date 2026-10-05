@@ -35,7 +35,7 @@ function registerMocks(client: MockApiClient): void {
   standalone: true,
   imports: [],
   template: `
-    <div data-testid="settings-notifications-screen">
+    <div class="page" data-testid="settings-notifications-screen">
       <h1>Notification Settings</h1>
 
       <section>

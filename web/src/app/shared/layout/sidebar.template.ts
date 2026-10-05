@@ -22,7 +22,7 @@ export const SIDEBAR_TEMPLATE = `
 
       <nav class="sidebar-nav">
         @if (!auth.hasAdminRole()) {
-          <div class="nav-group-label">{{ 'Workspace' }}</div>
+          <div class="nav-group-label">{{ 'Main' }}</div>
           @for (item of firmNavItems; track item.label) {
             <a
               [routerLink]="item.path"
@@ -52,6 +52,24 @@ export const SIDEBAR_TEMPLATE = `
               </a>
             }
           }
+        }
+
+        <!-- Story feature pages grouped per the styling card (Vendor / Customer / Admin). -->
+        @for (group of navGroups; track group) {
+          <div class="nav-group" [attr.data-nav-group]="group">
+            <div class="nav-group-label">{{ group }}</div>
+            @for (item of featureNavItemsFor(group); track item.path) {
+              <a
+                [routerLink]="item.path"
+                routerLinkActive="active"
+                class="nav-item"
+                (click)="navClick.emit()"
+              >
+                <span class="nav-icon" [innerHTML]="item.icon | safeHtml"></span>
+                <span class="nav-label">{{ item.label }}</span>
+              </a>
+            }
+          </div>
         }
 
         <!-- Role-agnostic entries (saved searches): every signed-in user owns

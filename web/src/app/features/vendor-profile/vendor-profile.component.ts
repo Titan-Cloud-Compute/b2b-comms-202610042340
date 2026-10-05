@@ -38,7 +38,7 @@ export const DOCUMENT_OUTCOME = 'the document is stored with status "pending" an
   standalone: true,
   imports: [ReactiveFormsModule],
   template: `
-    <div data-testid="vendor-profile-screen">
+    <div class="page" data-testid="vendor-profile-screen">
       <h1>Vendor Profile</h1>
 
       <section>
